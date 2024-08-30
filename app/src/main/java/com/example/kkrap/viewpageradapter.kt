@@ -8,7 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 class viewpageradapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity)
 
 
-//프래그먼트들 불러오기
+//프래그먼트들 연결시키기
 {private val fragments = listOf(
         frag1(),
         frag2(),

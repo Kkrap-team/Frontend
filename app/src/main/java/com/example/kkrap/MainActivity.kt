@@ -22,13 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         val btn: Button = binding.btnHome
 
+        //로그인하러 가기 버튼 클릭 설정
         btn.setOnClickListener{
             val intent = Intent(this, LoginActivity::class.java)
             finish()
             startActivity(intent)
-//            intent.putExtra("Data1", "Hello World")
-//            intent.putExtra("Data2", 2018)
-//            binding.button.setOnClickListener{startActivity(intent)}
         }
 
     }

@@ -28,6 +28,10 @@ class CustomWebviewClient(private val context: Context, private val activtiy : A
 
         //여기서 쿠키값을 가져와야됨
 
+        // 쿠키 가져오기
+//            val cookies = customWebView.getCookies(" ") // *여기에 원하는 url 입력
+//            Log.d("Cookies", "Cookies: $cookies")
+
     }
 
     override fun onLoadResource(view: WebView?, url: String?) {

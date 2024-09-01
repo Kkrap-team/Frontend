@@ -38,8 +38,9 @@ android {
     }
 }
 
+
+
 dependencies {
-    implementation("com.tbuonomo:dotsindicator:5.0")
     //뷰페이저
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation(libs.androidx.core.ktx)
@@ -51,3 +52,4 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+

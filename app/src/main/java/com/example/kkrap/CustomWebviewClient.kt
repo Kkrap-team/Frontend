@@ -11,6 +11,7 @@ import android.net.http.SslError
 import android.webkit.WebResourceError
 import android.webkit.WebResourceResponse
 import android.webkit.SslErrorHandler
+import android.webkit.CookieManager
 
 import android.webkit.WebViewClient
 
@@ -26,13 +27,35 @@ class CustomWebviewClient(private val context: Context, private val activtiy : A
         super.onPageFinished(view, url)
         Log.d("CustomWebView", "Page finished loading: $url")
 
-        //여기서 쿠키값을 가져와야됨
 
-        // 쿠키 가져오기
+        //쿠키 설정
+        if (url == " ")  //*여기 'http://172.20.10.12:8080 넣기
+        {
+            val cookieManager = CookieManager.getInstance()
+            val cookies = cookieManager.getCookie(url)
+
+            if (cookies != null) {
+                val cookieMap = parseCookies(cookies)
+
+                // 원하는 쿠키 값만 추출하기 (email,id,nickname,profileimage)
+                val email = cookieMap["email"]
+                val id = cookieMap["id"]
+                val nickname = cookieMap["nickname"]
+                val profileImage = cookieMap["profileimage"]
+
+                Log.d("Cookies", "Email: $email")
+                Log.d("Cookies", "ID: $id")
+                Log.d("Cookies", "Nickname: $nickname")
+                Log.d("Cookies", "Profile Image: $profileImage")
+            } else {
+                Log.d("CustomWebView", "No cookies found for $url")
+            }
+        }
+    }
+
+        // 쿠키 가져오기?
 //            val cookies = customWebView.getCookies(" ") // *여기에 원하는 url 입력
 //            Log.d("Cookies", "Cookies: $cookies")
-
-    }
 
     override fun onLoadResource(view: WebView?, url: String?) {
         super.onLoadResource(view, url)
@@ -77,18 +100,33 @@ class CustomWebviewClient(private val context: Context, private val activtiy : A
     ): Boolean {
         val url = request?.url?.toString()
         Log.d("CustomWebView", "url : ${url}")
-        // 특정 URL로의 로딩을 막기 위한 조건을 설정합니다.
+        return super.shouldOverrideUrlLoading(view, request)
+    }
+
+    //특정 쿠키 값 추출하는 함수
+        private fun parseCookies(cookieString: String): Map<String, String> {
+            val cookieMap = mutableMapOf<String, String>()
+            val cookiePairs = cookieString.split(";")
+
+            for (pair in cookiePairs) {
+                val keyValue = pair.split("=")
+                if (keyValue.size == 2) {
+                    val key = keyValue[0].trim()
+                    val value = keyValue[1].trim()
+                    cookieMap[key] = value
+                }
+            }
+
+            return cookieMap
+
+        // 특정 URL로의 로딩을 막기 위한 조건을 설정합니다??
 //        if (url != null && url.startsWith("https://where42.kr/"))
 ////        if (url != null && url.startsWith("https://test.where42.kr:3000"))
 //        {
 ////            Log.d("WebView", "url : ${url}")
-//            // 해당 URL로의 로딩을 막습니다.
+//            // 해당 URL로의 로딩을 막습니다??
 //            return true
 //        }
-//        // 그 외의 경우에
-
-        return super.shouldOverrideUrlLoading(view, request)
-//        return false
     }
 
 

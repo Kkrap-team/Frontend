@@ -26,6 +26,50 @@
         app:layout_constraintBottom_toTopOf="@id/btn_home"
         />
 
+    <ImageView
+        android:id="@+id/indicator0_iv_main"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.418"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/indicater_circle_main" />
+
+    <ImageView
+        android:id="@+id/indicator1_iv_main"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/indicater_circle_gray" />
+
+    <ImageView
+        android:id="@+id/indicator2_iv_main"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/indicater_circle_gray" />
+
+    <ImageView
+        android:id="@+id/indicator3_iv_main"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/indicater_circle_gray" />
+
     <TextView
         android:id="@+id/t_use"
         android:layout_width="wrap_content"

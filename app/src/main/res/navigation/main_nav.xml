@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:labelVisibilityMode="labeled"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.kkrap_team.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_HomeFragment_to_folderFragment"
+            app:destination="@id/folderFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/folderFragment"
+        android:name="com.example.kkrap_team.FolderFragment"
+        android:label="fragment_folder"
+        tools:layout="@layout/fragment_folder" >
+        <action
+            android:id="@+id/action_folderFragment_to_chattingFragment"
+            app:destination="@id/chattingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chattingFragment"
+        android:name="com.example.kkrap_team.ChattingFragment"
+        android:label="fragment_chatting"
+        tools:layout="@layout/fragment_chatting" >
+        <action
+            android:id="@+id/action_chattingFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.kkrap_team.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+
+</navigation>

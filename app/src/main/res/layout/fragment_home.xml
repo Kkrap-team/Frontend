@@ -3,17 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".chattingFragment">
+    android:id="@+id/home_goal_add_floating_btn"
+    tools:context=".HomeFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:layout_gravity="center"
-        android:textAlignment="center"
-        android:textStyle="normal"
-        android:text="@string/text_home"
         android:lineSpacingExtra="10dp"
-        />
+        android:text="@string/text_home"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="normal" />
 
 </FrameLayout>

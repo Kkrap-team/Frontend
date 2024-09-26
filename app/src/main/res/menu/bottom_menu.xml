@@ -3,35 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/Home"
-        android:enabled="true"
         android:icon="@drawable/baseline_home_24"
         android:title="@string/title_home"
-        app:showAsAction="ifRoom"
         />
 
 
     <item
         android:id="@+id/folder"
-        android:enabled="true"
         android:icon="@drawable/baseline_folder_24"
         android:title="@string/title_folder"
-        app:showAsAction="ifRoom"
         />
 
     <item
         android:id="@+id/chatting"
-        android:enabled="true"
         android:icon="@drawable/baseline_people_24"
         android:title="@string/title_chatting"
-        app:showAsAction="ifRoom"
         />
 
     <item
         android:id="@+id/setting"
-        android:enabled="true"
         android:icon="@drawable/baseline_settings_24"
         android:title="@string/title_setting"
-        app:showAsAction="ifRoom"
         />
 
 </menu>

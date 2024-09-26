@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "kkrap_team"
+rootProject.name = "kkrap"
 include(":app")
  

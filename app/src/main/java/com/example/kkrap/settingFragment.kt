@@ -1,4 +1,4 @@
-package com.example.kkrap_team
+package com.example.kkrap
 
 import android.content.Context
 import android.os.Bundle
